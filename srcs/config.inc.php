@@ -9,39 +9,43 @@
  *
  * @package PhpMyAdmin
  */
+/*
+** declare(strict_types=1);
+*/
 
 /**
  * This is needed for cookie based authentication to encrypt password in
  * cookie. Needs to be 32 chars long.
  */
-$cfg['blowfish_secret'] = 'jaimetaperdesbonnhgifuyf!!!@#$fgjhjgjhestracesdekeh'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
+$cfg['blowfish_secret'] = '678ibw8dhnvbi56nfosd4iaodi5hbishzbk42'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
 
 /**
  * Servers configuration
  */
 $i = 0;
 
+/**
+ * First server
+ */
 $i++;
 /* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'cookie';
 /* Server parameters */
 $cfg['Servers'][$i]['host'] = 'localhost';
 $cfg['Servers'][$i]['compress'] = false;
-$cfg['Servers'][$i]['AllowNoPassword'] = true;
+$cfg['Servers'][$i]['AllowNoPassword'] = true; /* was false by default */
 
 /**
  * phpMyAdmin configuration storage settings.
  */
 
 /* User used to manipulate with storage */
-// // $cfg['Servers'][$i]['controlhost'] = '';
-// // $cfg['Servers'][$i]['controlport'] = '';
-// $cfg['Servers'][$i]['controluser'] = 'root';
-// $cfg['Servers'][$i]['controlpass'] = '';
+// $cfg['Servers'][$i]['controlhost'] = '';
+// $cfg['Servers'][$i]['controlport'] = '';
+// $cfg['Servers'][$i]['controluser'] = 'pma';
+// $cfg['Servers'][$i]['controlpass'] = 'pmapass';
 
-
-
-// /* Storage database and tables */
+/* Storage database and tables */
 // $cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
 // $cfg['Servers'][$i]['bookmarktable'] = 'pma__bookmark';
 // $cfg['Servers'][$i]['relation'] = 'pma__relation';
@@ -151,4 +155,3 @@ $cfg['SaveDir'] = '';
  * You can find more configuration options in the documentation
  * in the doc/ folder or at <https://docs.phpmyadmin.net/>.
  */
-$cfg['TempDir'] = '/var/lib/phpmyadmin';
